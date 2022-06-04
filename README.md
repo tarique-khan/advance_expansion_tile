@@ -1,6 +1,6 @@
 # Configurable Expansion
 
-![configurable-expanion-tile](configurable_expansion_tile.gif)
+<img src="configurable_expansion_tile.gif" width="200" height="600">
 
 1.  It allows you to manually collapse, exapnd or toggle expansion tile
 2.  It allows you to hide the default icon
