@@ -1,4 +1,4 @@
-name: configurable_expansion_tile
+name: configurable_expansion_tile_plus
 description: Allows to configure Expansion Tile
 version: 1.0.0
 repository: https://github.com/tarique-khan/configurable_expansion_tile
@@ -8,7 +8,7 @@ platforms:
   ios:
   web:
   linux:
-  mac:
+  macos:
   windows:
 
 environment:
