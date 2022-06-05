@@ -1,3 +1,3 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* Allows manual configuration of Expansion Tile such as Expansion, Toggle, Collapsing
