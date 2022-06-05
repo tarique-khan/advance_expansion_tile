@@ -1,4 +1,4 @@
-# Configurable Expansion
+# Configurable Expansion Tile
 
 <img src="configurable_expansion_tile.gif" width="300" height="600">
 
