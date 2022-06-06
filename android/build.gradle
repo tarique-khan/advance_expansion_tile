@@ -1,4 +1,4 @@
-group 'com.tarique.configurable_expansion_tile'
+group 'com.tarique.advance_expansion_tile'
 version '1.0-SNAPSHOT'
 
 buildscript {

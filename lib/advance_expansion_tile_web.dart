@@ -6,15 +6,15 @@ import 'dart:html' as html show window;
 
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
-import 'configurable_expansion_tile_platform_interface.dart';
+import 'advance_expansion_tile_platform_interface.dart';
 
-/// A web implementation of the ConfigurableExpansionTilePlatform of the ConfigurableExpansionTile plugin.
-class ConfigurableExpansionTileWeb extends ConfigurableExpansionTilePlatform {
-  /// Constructs a ConfigurableExpansionTileWeb
-  ConfigurableExpansionTileWeb();
+/// A web implementation of the AdvanceExpansionTilePlatform of the AdvanceExpansionTile plugin.
+class AdvanceExpansionTileWeb extends AdvanceExpansionTilePlatform {
+  /// Constructs a AdvanceExpansionTileWeb
+  AdvanceExpansionTileWeb();
 
   static void registerWith(Registrar registrar) {
-    ConfigurableExpansionTilePlatform.instance = ConfigurableExpansionTileWeb();
+    AdvanceExpansionTilePlatform.instance = AdvanceExpansionTileWeb();
   }
 
   /// Returns a [String] containing the version of the platform.

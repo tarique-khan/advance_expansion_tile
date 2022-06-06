@@ -1,4 +1,4 @@
-package com.tarique.configurable_expansion_tile
+package com.tarique.advance_expansion_tile
 
 import androidx.annotation.NonNull
 
@@ -8,8 +8,8 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 
-/** ConfigurableExpansionTilePlugin */
-class ConfigurableExpansionTilePlugin: FlutterPlugin, MethodCallHandler {
+/** AdvanceExpansionTilePlugin */
+class AdvanceExpansionTilePlugin: FlutterPlugin, MethodCallHandler {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -17,7 +17,7 @@ class ConfigurableExpansionTilePlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var channel : MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "configurable_expansion_tile")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "advance_expansion_tile")
     channel.setMethodCallHandler(this)
   }
 

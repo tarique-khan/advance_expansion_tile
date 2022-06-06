@@ -5,8 +5,8 @@
 import FlutterMacOS
 import Foundation
 
-import configurable_expansion_tile
+import advance_expansion_tile
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
-  ConfigurableExpansionTilePlugin.register(with: registry.registrar(forPlugin: "ConfigurableExpansionTilePlugin"))
+  AdvanceExpansionTilePlugin.register(with: registry.registrar(forPlugin: "AdvanceExpansionTilePlugin"))
 }

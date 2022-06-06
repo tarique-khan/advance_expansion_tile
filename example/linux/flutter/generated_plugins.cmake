@@ -3,7 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  configurable_expansion_tile
+  advance_expansion_tile
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

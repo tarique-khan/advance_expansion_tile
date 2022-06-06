@@ -1,6 +1,6 @@
-# configurable_expansion_tile_example
+# advance_expansion_tile_example
 
-Demonstrates how to use the configurable_expansion_tile plugin.
+Demonstrates how to use the advance_expansion_tile plugin.
 
 ## Getting Started
 

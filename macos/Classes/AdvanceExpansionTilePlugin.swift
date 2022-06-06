@@ -1,10 +1,10 @@
 import Cocoa
 import FlutterMacOS
 
-public class ConfigurableExpansionTilePlugin: NSObject, FlutterPlugin {
+public class AdvanceExpansionTilePlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "configurable_expansion_tile", binaryMessenger: registrar.messenger)
-    let instance = ConfigurableExpansionTilePlugin()
+    let channel = FlutterMethodChannel(name: "advance_expansion_tile", binaryMessenger: registrar.messenger)
+    let instance = AdvanceExpansionTilePlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

@@ -1,7 +1,4 @@
 
-import 'configurable_expansion_tile_platform_interface.dart';
-
-
 // Copyright 2014 The Flutter Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -41,11 +38,11 @@ const Duration _kExpand = Duration(milliseconds: 200);
 ///    expansion tile represents a sublist.
 ///  * The "Expand and collapse" section of
 ///    <https://material.io/components/lists#types>
-class ConfigurableExpansionTile extends StatefulWidget {
+class AdvanceExpansionTile extends StatefulWidget {
   /// Creates a single-line [ListTile] with an expansion arrow icon that expands or collapses
   /// the tile to reveal or hide the [children]. The [initiallyExpanded] property must
   /// be non-null.
-  const ConfigurableExpansionTile({
+  const AdvanceExpansionTile({
     required Key key,
     this.leading,
     required this.title,
@@ -213,10 +210,10 @@ class ConfigurableExpansionTile extends StatefulWidget {
   final VoidCallback? onTap;
 
   @override
-  State<ConfigurableExpansionTile> createState() => ConfiguarableExpansionTileState();
+  State<AdvanceExpansionTile> createState() => AdvanceExpansionTileState();
 }
 
-class ConfiguarableExpansionTileState extends State<ConfigurableExpansionTile> with SingleTickerProviderStateMixin {
+class AdvanceExpansionTileState extends State<AdvanceExpansionTile> with SingleTickerProviderStateMixin {
   static final Animatable<double> _easeOutTween = CurveTween(curve: Curves.easeOut);
   static final Animatable<double> _easeInTween = CurveTween(curve: Curves.easeIn);
   static final Animatable<double> _halfTween = Tween<double>(begin: 0.0, end: 0.5);

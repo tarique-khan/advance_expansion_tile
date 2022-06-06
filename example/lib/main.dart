@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:configurable_expansion_tile/configurable_expansion_tile.dart';
+import 'package:advance_expansion_tile/advance_expansion_tile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   ///it needed to manually collapse, exapnd or toggle Expansion tile
-  final GlobalKey<ConfiguarableExpansionTileState> _globalKey = GlobalKey();
+  final GlobalKey<AdvanceExpansionTileState> _globalKey = GlobalKey();
 
   @override
   void initState() {
@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            ConfigurableExpansionTile(
+            AdvanceExpansionTile(
               key: _globalKey,
               title: const Text("Expansion Tile Title"),
               children: [
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
             _globalKey.currentState?.toggle();
           },
           child: const Icon(
-            Icons.add
+              Icons.add
           ),
         ),
       ),

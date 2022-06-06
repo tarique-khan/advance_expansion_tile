@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tarique.configurable_expansion_tile_example">
+    package="com.tarique.advance_expansion_tile_example">
    <application
-        android:label="configurable_expansion_tile_example"
+        android:label="advance_expansion_tile_example"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

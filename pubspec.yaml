@@ -1,8 +1,12 @@
 name: configurable_expansion_tile_plus
-description: Allows to configure Expansion Tile
+description:
+  1. It allows you to manually collapse, exapnd or toggle expansion tile
+  2. It allows you to hide the default icon
+  3. It allows you to disable click of the exapnsion tile
+  4. It provides the onTap callback whenever the expansion tile gets clicked
 version: 1.0.0
-repository: https://github.com/tarique-khan/configurable_expansion_tile
-issue_tracker: https://github.com/tarique-khan/configurable_expansion_tile/issues
+repository: https://github.com/tarique-khan/advance_expansion_tile
+issue_tracker: https://github.com/tarique-khan/advance_expansion_tile/issues
 platforms:
   android:
   ios:
@@ -45,17 +49,17 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.tarique.configurable_expansion_tile
-        pluginClass: ConfigurableExpansionTilePlugin
+        package: com.tarique.advance_expansion_tile
+        pluginClass: AdvanceExpansionTilePlugin
       ios:
-        pluginClass: ConfigurableExpansionTilePlugin
+        pluginClass: AdvanceExpansionTilePlugin
       linux:
-        pluginClass: ConfigurableExpansionTilePlugin
+        pluginClass: AdvanceExpansionTilePlugin
       macos:
-        pluginClass: ConfigurableExpansionTilePlugin
+        pluginClass: AdvanceExpansionTilePlugin
       web:
-        pluginClass: ConfigurableExpansionTileWeb
-        fileName: configurable_expansion_tile_web.dart
+        pluginClass: AdvanceExpansionTileWeb
+        fileName: advance_expansion_tile_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Project-level configuration.
-set(PROJECT_NAME "configurable_expansion_tile")
+set(PROJECT_NAME "advance_expansion_tile")
 project(${PROJECT_NAME} LANGUAGES CXX)
 
 # This value is used when generating builds using this plugin, so it must
 # not be changed.
-set(PLUGIN_NAME "configurable_expansion_tile_plugin")
+set(PLUGIN_NAME "advance_expansion_tile_plugin")
 
 # Define the plugin library target. Its name must not be changed (see comment
 # on PLUGIN_NAME above).
 #
 # Any new source files that you add to the plugin should be added here.
 add_library(${PLUGIN_NAME} SHARED
-  "configurable_expansion_tile_plugin.cc"
+  "advance_expansion_tile_plugin.cc"
 )
 
 # Apply a standard set of build settings that are configured in the
@@ -41,7 +41,7 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE PkgConfig::GTK)
 # List of absolute paths to libraries that should be bundled with the plugin.
 # This list could contain prebuilt libraries, or libraries created by an
 # external build triggered from this build file.
-set(configurable_expansion_tile_bundled_libraries
+set(advance_expansion_tile_bundled_libraries
   ""
   PARENT_SCOPE
 )

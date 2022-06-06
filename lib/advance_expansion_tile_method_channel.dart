@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'configurable_expansion_tile_platform_interface.dart';
+import 'advance_expansion_tile_platform_interface.dart';
 
-/// An implementation of [ConfigurableExpansionTilePlatform] that uses method channels.
-class MethodChannelConfigurableExpansionTile extends ConfigurableExpansionTilePlatform {
+/// An implementation of [AdvanceExpansionTilePlatform] that uses method channels.
+class MethodChannelAdvanceExpansionTile extends AdvanceExpansionTilePlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
-  final methodChannel = const MethodChannel('configurable_expansion_tile');
+  final methodChannel = const MethodChannel('advance_expansion_tile');
 
   @override
   Future<String?> getPlatformVersion() async {

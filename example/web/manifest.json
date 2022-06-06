@@ -1,11 +1,11 @@
 {
-    "name": "configurable_expansion_tile_example",
-    "short_name": "configurable_expansion_tile_example",
+    "name": "advance_expansion_tile_example",
+    "short_name": "advance_expansion_tile_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Demonstrates how to use the configurable_expansion_tile plugin.",
+    "description": "Demonstrates how to use the advance_expansion_tile plugin.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

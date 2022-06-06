@@ -1,4 +1,4 @@
-package com.tarique.configurable_expansion_tile_example
+package com.tarique.advance_expansion_tile_example
 
 import io.flutter.embedding.android.FlutterActivity
 
