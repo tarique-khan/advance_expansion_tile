@@ -16,7 +16,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   ///it needed to manually collapse, exapnd or toggle Expansion tile
   final GlobalKey<AdvanceExpansionTileState> _globalKey = GlobalKey();
 
@@ -34,18 +33,28 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            AdvanceExpansionTile(
-              key: _globalKey,
-              title: const Text("Expansion Tile Title"),
-              children: [
-                Container(
-                  height: 50,
-                  color: Colors.green,
-                )
-              ],
-              onTap: () {
-
-              },
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: AdvanceExpansionTile(
+                key: _globalKey,
+                title: const Text("Expansion Tile Title"),
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    borderRadius: const BorderRadius.all(Radius.circular(10))),
+                children: [
+                  ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                    child: Container(
+                      height: 50,
+                      color: Colors.green,
+                    ),
+                  ),
+                ],
+                onTap: () {},
+              ),
             ),
           ],
         ),
@@ -54,9 +63,7 @@ class _MyAppState extends State<MyApp> {
             ///toggle expansion tile
             _globalKey.currentState?.toggle();
           },
-          child: const Icon(
-              Icons.add
-          ),
+          child: const Icon(Icons.add),
         ),
       ),
     );

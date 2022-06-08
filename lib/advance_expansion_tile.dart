@@ -1,8 +1,8 @@
-
 // Copyright 2014 The Flutter Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
@@ -42,36 +42,35 @@ class AdvanceExpansionTile extends StatefulWidget {
   /// Creates a single-line [ListTile] with an expansion arrow icon that expands or collapses
   /// the tile to reveal or hide the [children]. The [initiallyExpanded] property must
   /// be non-null.
-  const AdvanceExpansionTile({
-    required Key key,
-    this.leading,
-    required this.title,
-    this.subtitle,
-    this.onExpansionChanged,
-    this.children = const <Widget>[],
-    this.trailing,
-    this.initiallyExpanded = false,
-    this.maintainState = false,
-    this.tilePadding,
-    this.expandedCrossAxisAlignment,
-    this.expandedAlignment,
-    this.childrenPadding,
-    this.backgroundColor,
-    this.collapsedBackgroundColor,
-    this.textColor,
-    this.collapsedTextColor,
-    this.iconColor,
-    this.collapsedIconColor,
-    this.controlAffinity,
-    this.hideIcon = false,
-    this.disabled = false,
-    this.onTap
-  }) : assert(initiallyExpanded != null),
-        assert(maintainState != null),
-        assert(
-        expandedCrossAxisAlignment != CrossAxisAlignment.baseline,
-        'CrossAxisAlignment.baseline is not supported since the expanded children '
-            'are aligned in a column, not a row. Try to use another constant.',
+  const AdvanceExpansionTile(
+      {required Key key,
+      this.leading,
+      required this.title,
+      this.subtitle,
+      this.onExpansionChanged,
+      this.children = const <Widget>[],
+      this.trailing,
+      this.initiallyExpanded = false,
+      this.maintainState = false,
+      this.tilePadding,
+      this.expandedCrossAxisAlignment,
+      this.expandedAlignment,
+      this.childrenPadding,
+      this.backgroundColor,
+      this.collapsedBackgroundColor,
+      this.textColor,
+      this.collapsedTextColor,
+      this.iconColor,
+      this.collapsedIconColor,
+      this.controlAffinity,
+      this.hideIcon = false,
+      this.disabled = false,
+      this.decoration,
+      this.onTap})
+      : assert(
+          expandedCrossAxisAlignment != CrossAxisAlignment.baseline,
+          'CrossAxisAlignment.baseline is not supported since the expanded children '
+          'are aligned in a column, not a row. Try to use another constant.',
         ),
         super(key: key);
 
@@ -183,7 +182,6 @@ class AdvanceExpansionTile extends StatefulWidget {
   /// Used to override to the [ListTileThemeData.iconColor].
   final Color? collapsedIconColor;
 
-
   /// The color of the tile's titles when the sublist is expanded.
   ///
   /// Used to override to the [ListTileThemeData.textColor].
@@ -206,6 +204,9 @@ class AdvanceExpansionTile extends StatefulWidget {
   ///Use to disable click
   final bool disabled;
 
+  ///decoration
+  final BoxDecoration? decoration;
+
   ///onTap callback
   final VoidCallback? onTap;
 
@@ -213,10 +214,14 @@ class AdvanceExpansionTile extends StatefulWidget {
   State<AdvanceExpansionTile> createState() => AdvanceExpansionTileState();
 }
 
-class AdvanceExpansionTileState extends State<AdvanceExpansionTile> with SingleTickerProviderStateMixin {
-  static final Animatable<double> _easeOutTween = CurveTween(curve: Curves.easeOut);
-  static final Animatable<double> _easeInTween = CurveTween(curve: Curves.easeIn);
-  static final Animatable<double> _halfTween = Tween<double>(begin: 0.0, end: 0.5);
+class AdvanceExpansionTileState extends State<AdvanceExpansionTile>
+    with SingleTickerProviderStateMixin {
+  static final Animatable<double> _easeOutTween =
+      CurveTween(curve: Curves.easeOut);
+  static final Animatable<double> _easeInTween =
+      CurveTween(curve: Curves.easeIn);
+  static final Animatable<double> _halfTween =
+      Tween<double>(begin: 0.0, end: 0.5);
 
   final ColorTween _borderColorTween = ColorTween();
   final ColorTween _headerColorTween = ColorTween();
@@ -242,11 +247,12 @@ class AdvanceExpansionTileState extends State<AdvanceExpansionTile> with SingleT
     _borderColor = _controller.drive(_borderColorTween.chain(_easeOutTween));
     _headerColor = _controller.drive(_headerColorTween.chain(_easeInTween));
     _iconColor = _controller.drive(_iconColorTween.chain(_easeInTween));
-    _backgroundColor = _controller.drive(_backgroundColorTween.chain(_easeOutTween));
+    _backgroundColor =
+        _controller.drive(_backgroundColorTween.chain(_easeOutTween));
 
-    _isExpanded = PageStorage.of(context)?.readState(context) as bool? ?? widget.initiallyExpanded;
-    if (_isExpanded)
-      _controller.value = 1.0;
+    _isExpanded = PageStorage.of(context)?.readState(context) as bool? ??
+        widget.initiallyExpanded;
+    if (_isExpanded) _controller.value = 1.0;
   }
 
   @override
@@ -262,8 +268,7 @@ class AdvanceExpansionTileState extends State<AdvanceExpansionTile> with SingleT
         _controller.forward();
       } else {
         _controller.reverse().then<void>((void value) {
-          if (!mounted)
-            return;
+          if (!mounted) return;
           setState(() {
             // Rebuild without widget.children.
           });
@@ -295,8 +300,7 @@ class AdvanceExpansionTileState extends State<AdvanceExpansionTile> with SingleT
           _controller.forward();
         } else {
           _controller.reverse().then<void>((void value) {
-            if (!mounted)
-              return;
+            if (!mounted) return;
             setState(() {
               // Rebuild without widget.children.
             });
@@ -311,7 +315,8 @@ class AdvanceExpansionTileState extends State<AdvanceExpansionTile> with SingleT
   }
 
   // Platform or null affinity defaults to trailing.
-  ListTileControlAffinity _effectiveAffinity(ListTileControlAffinity? affinity) {
+  ListTileControlAffinity _effectiveAffinity(
+      ListTileControlAffinity? affinity) {
     switch (affinity ?? ListTileControlAffinity.trailing) {
       case ListTileControlAffinity.leading:
         return ListTileControlAffinity.leading;
@@ -329,14 +334,15 @@ class AdvanceExpansionTileState extends State<AdvanceExpansionTile> with SingleT
   }
 
   Widget? _buildLeadingIcon(BuildContext context) {
-    if (_effectiveAffinity(widget.controlAffinity) != ListTileControlAffinity.leading)
-      return null;
+    if (_effectiveAffinity(widget.controlAffinity) !=
+        ListTileControlAffinity.leading) return null;
     return _buildIcon(context);
   }
 
   Widget? _buildTrailingIcon(BuildContext context) {
-    if (_effectiveAffinity(widget.controlAffinity) != ListTileControlAffinity.trailing || widget.hideIcon)
-      return null;
+    if (_effectiveAffinity(widget.controlAffinity) !=
+            ListTileControlAffinity.trailing ||
+        widget.hideIcon) return null;
     return _buildIcon(context);
   }
 
@@ -344,13 +350,14 @@ class AdvanceExpansionTileState extends State<AdvanceExpansionTile> with SingleT
     final Color borderSideColor = _borderColor.value ?? Colors.transparent;
 
     return Container(
-      decoration: BoxDecoration(
-        color: _backgroundColor.value ?? Colors.transparent,
-        border: Border(
-          top: BorderSide(color: borderSideColor),
-          bottom: BorderSide(color: borderSideColor),
-        ),
-      ),
+      decoration: widget.decoration ??
+          BoxDecoration(
+            color: _backgroundColor.value ?? Colors.transparent,
+            border: Border(
+              top: BorderSide(color: borderSideColor),
+              bottom: BorderSide(color: borderSideColor),
+            ),
+          ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
@@ -407,7 +414,8 @@ class AdvanceExpansionTileState extends State<AdvanceExpansionTile> with SingleT
         child: Padding(
           padding: widget.childrenPadding ?? EdgeInsets.zero,
           child: Column(
-            crossAxisAlignment: widget.expandedCrossAxisAlignment ?? CrossAxisAlignment.center,
+            crossAxisAlignment: widget.expandedCrossAxisAlignment ??
+                CrossAxisAlignment.center,
             children: widget.children,
           ),
         ),
@@ -421,4 +429,3 @@ class AdvanceExpansionTileState extends State<AdvanceExpansionTile> with SingleT
     );
   }
 }
-

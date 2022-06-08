@@ -12,7 +12,7 @@
 ### Exapnd, Collapse, Toggle Manually
 To do so, you need to create global key first.
 ```
-final GlobalKey<ConfiguarableExpansionTileState> _globalKey = GlobalKey();
+final GlobalKey<AdvanceExpansionTileState> _globalKey = GlobalKey();
 
 ///To exapnd 
 _globalKey.currentState?.expand();
