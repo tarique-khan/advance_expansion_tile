@@ -1,7 +1,7 @@
 name: advance_expansion_tile
 description:
   1. It allows you to manually collapse, exapnd or toggle expansion tile. It allows you to disable the click
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/tarique-khan/advance_expansion_tile
 issue_tracker: https://github.com/tarique-khan/advance_expansion_tile/issues
 platforms:
